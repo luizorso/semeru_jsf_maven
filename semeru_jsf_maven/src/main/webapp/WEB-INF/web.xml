@@ -21,7 +21,7 @@
     
      <!-- Endereço dos arquivos de configuração do Spring -->
     
-    <!--
+  
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
@@ -29,37 +29,17 @@
         </param-value>
     </context-param> 
     
-    -->
-
     <!-- Configurações do tema do PrimeFaces -->
     <context-param>  
         <param-name>primefaces.THEME</param-name>  
-        <param-value>sam</param-value>  
-    </context-param>         
-    
-    <!-- Filtros do Spring  -->
-    <!--<listener>
-        <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
-    </listener>
-    <filter>
-        <filter-name>springSecurityFilterChain</filter-name>
-        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
-    </filter>
-    <filter-mapping>
-        <filter-name>springSecurityFilterChain</filter-name>
-        <url-pattern>/*</url-pattern>
-        <dispatcher>FORWARD</dispatcher>
-        <dispatcher>REQUEST</dispatcher>
-    </filter-mapping>
-    
-    -->
-    
-        <!-- Configurações do JavaServer Faces -->
-    
-    <context-param>
+        <param-value>south-street</param-value>  
+    </context-param>
+      <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>
     </context-param>
+    
+     <!-- Configurações do JavaServer Faces -->
     
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>
@@ -79,9 +59,9 @@
             <url-pattern>*.xhtml</url-pattern>
         </web-resource-collection>
         <auth-constraint/>
-    </security-constraint>
+    </security-constraint> 
     
-    <!-- Configurações do PrimeFaces -->
+     <!-- Configurações do PrimeFaces -->
     
     <servlet>
         <servlet-name>Resource Servlet</servlet-name>
@@ -90,8 +70,9 @@
     <servlet-mapping>
         <servlet-name>Resource Servlet</servlet-name>
         <url-pattern>/primefaces_resource/*</url-pattern>
-    </servlet-mapping>
+    </servlet-mapping>    
     
+     
     <!-- Filtros de Upload -->
     
 <!--    <filter>  
