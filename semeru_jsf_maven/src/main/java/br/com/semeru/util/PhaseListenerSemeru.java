@@ -1,4 +1,4 @@
-package br.com.sumeru.util;
+package br.com.semeru.util;
 
 import javax.faces.event.PhaseEvent;
 import javax.faces.event.PhaseId;
@@ -10,8 +10,8 @@ public class PhaseListenerSemeru implements PhaseListener {
     //Antes da Fase
     @Override
     public void beforePhase(PhaseEvent fase) {
+        System.out.println("Antes da fase: " + fase.getPhaseId());
         if (fase.getPhaseId().equals(PhaseId.RESTORE_VIEW)) {
-            System.out.println("Antes da fase: " +getPhaseId());
             Session session = HibernateUtil.getSessionFactory().openSession();
             session.beginTransaction();
             FacesContextUtil.setRequestSession(session);
@@ -21,8 +21,8 @@ public class PhaseListenerSemeru implements PhaseListener {
     //Depois da Fase
     @Override
     public void afterPhase(PhaseEvent fase) {
+        System.out.println("Depois da Fase: " + fase.getPhaseId());
         if (fase.getPhaseId().equals(PhaseId.RENDER_RESPONSE)) {
-            System.out.println("Depois da Fase: " +getPhaseId());
             Session session = FacesContextUtil.getRequestSession();
             try {
                 session.getTransaction().commit();

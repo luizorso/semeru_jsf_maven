@@ -2,15 +2,13 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xmlns="http://java.sun.com/xml/ns/javaee" 
          xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
-         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
-                http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee  http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
          id="WebApp_ID" version="2.5">
     
     <display-name>semeru_jsf_maven</display-name>
     
     <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-       
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
     
     <!-- Duração da sessão -->
@@ -23,12 +21,15 @@
     
      <!-- Endereço dos arquivos de configuração do Spring -->
     
+    <!--
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
             /WEB-INF/spring-security.xml
         </param-value>
     </context-param> 
+    
+    -->
 
     <!-- Configurações do tema do PrimeFaces -->
     <context-param>  
@@ -37,7 +38,7 @@
     </context-param>         
     
     <!-- Filtros do Spring  -->
-    <listener>
+    <!--<listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
     <filter>
@@ -50,6 +51,8 @@
         <dispatcher>FORWARD</dispatcher>
         <dispatcher>REQUEST</dispatcher>
     </filter-mapping>
+    
+    -->
     
         <!-- Configurações do JavaServer Faces -->
     
@@ -66,10 +69,8 @@
         
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>
-        <url-pattern>*.jsf</url-pattern>
+        <url-pattern>*.faces</url-pattern>
     </servlet-mapping>
-    
-    <!-- Impede acesso as páginas xthml -->
     
     <security-constraint>
         <display-name>Bloqueia o browser de acessar arquivos xhtml</display-name>

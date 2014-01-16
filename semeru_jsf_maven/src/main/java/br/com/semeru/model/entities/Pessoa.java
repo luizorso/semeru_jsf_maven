@@ -1,5 +1,5 @@
 
-package br.com.sumeru.model.entities;
+package br.com.semeru.model.entities;
 
 import java.io.Serializable;
 import java.util.Date;

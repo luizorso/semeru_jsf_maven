@@ -1,5 +1,5 @@
 
-package br.com.sumeru.model.entities;
+package br.com.semeru.model.entities;
 
 import java.io.Serializable;
 import java.util.List;
@@ -46,6 +46,16 @@ public class Cidade implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public List<Endereco> getEnderecos() {
+        return enderecos;
+    }
+
+    public void setEnderecos(List<Endereco> enderecos) {
+        this.enderecos = enderecos;
+    }
+    
+    
 
     @Override
     public int hashCode() {

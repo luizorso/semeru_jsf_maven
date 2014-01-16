@@ -1,4 +1,4 @@
-package br.com.sumeru.util;
+package br.com.semeru.util;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;

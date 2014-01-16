@@ -1,5 +1,5 @@
 
-package br.com.sumeru.util;
+package br.com.semeru.util;
 
 import javax.faces.context.FacesContext;
 import org.hibernate.Session;

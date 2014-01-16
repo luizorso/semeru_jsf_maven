@@ -1,5 +1,5 @@
 
-package br.com.sumeru.model.dao;
+package br.com.semeru.model.dao;
 
 import java.io.Serializable;
 import java.util.List;
