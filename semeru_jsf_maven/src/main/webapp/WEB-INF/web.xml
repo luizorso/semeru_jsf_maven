@@ -20,8 +20,7 @@
     </session-config>
     
      <!-- Endereço dos arquivos de configuração do Spring -->
-    
-  
+      
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
@@ -30,10 +29,11 @@
     </context-param> 
     
     <!-- Configurações do tema do PrimeFaces -->
-    <context-param>  
+     <context-param>  
         <param-name>primefaces.THEME</param-name>  
-        <param-value>south-street</param-value>  
-    </context-param>
+        <param-value>sam</param-value>  
+    </context-param> 
+    
       <context-param>
         <param-name>javax.faces.PROJECT_STAGE</param-name>
         <param-value>Development</param-value>

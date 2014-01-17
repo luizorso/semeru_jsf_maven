@@ -31,9 +31,8 @@ public class MbCidade implements Serializable{
      }
         public String clearCidade() {
             cidade = new Cidade();
-            return "/restrict/cadastrarCidade.faces";
-       
-    }
+            return editCidade();
+     }
         
     public String editCidade(){
         return "/restrict/cadastrarCidade.faces";
@@ -52,13 +51,15 @@ public class MbCidade implements Serializable{
     private void insertCidade() {
         cidadeDAO().save(cidade);
         FacesContext.getCurrentInstance().addMessage(null,
-                new FacesMessage(FacesMessage.SEVERITY_INFO, "Gravação efetuada com sucesso", ""));
+                new FacesMessage(FacesMessage.SEVERITY_INFO, 
+                "Gravação efetuada com sucesso", ""));
     }
 
     private void updateCidade() {
         cidadeDAO().update(cidade);
        FacesContext.getCurrentInstance().addMessage(null,
-                new FacesMessage(FacesMessage.SEVERITY_INFO, "Atualização efetuada com sucesso", ""));
+                new FacesMessage(FacesMessage.SEVERITY_INFO, 
+               "Atualização efetuada com sucesso", ""));
     }
     
     public void deleteCidade(){
