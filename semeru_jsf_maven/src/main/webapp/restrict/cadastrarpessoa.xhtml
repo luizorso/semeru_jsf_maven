@@ -31,9 +31,7 @@
                                 <h:outputLabel for="sexo" value="Sexo:"/>
                                 <p:selectOneMenu id="sexo" value="#{mbPessoa.pessoa.sexo.idSexo}">
                                     <f:selectItems value="#{bbSexo.sexos}" 
-                                                   var="sexo" 
-                                                   itemValue="#{sexo.idSexo}" 
-                                                   itemLabel="#{sexo.descricao}"/>
+                                                   var="sexo" itemValue="#{sexo.idSexo}" itemLabel="#{sexo.descricao}"/>
                                 
                                 </p:selectOneMenu>
                                 
