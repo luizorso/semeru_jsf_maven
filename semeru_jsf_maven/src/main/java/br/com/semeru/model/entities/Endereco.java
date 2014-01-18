@@ -21,41 +21,41 @@ public class Endereco implements Serializable{
     
     @Id
     @GeneratedValue
-    @Column(name="IdEndereco", nullable=false)
+    @Column(name = "IdEndereco", nullable = false)
     private Integer idEndereco;
-    @Column(name="Bairro", length=80)
+    @Column(name = "Bairro", length = 80)
     private String bairro;
-    @Column (name="NomeLogradouro", length=80)
+    @Column (name = "NomeLogradouro", length=80)
     private String nomeLogradouro;
-    @Column (name="CEP", length=9)
+    @Column (name = "CEP", length = 9)
     private String cep;
-    @Column (name="Numero")
+    @Column (name = "Numero")
     private Integer numero;
-    @Column (name="Complemento")
+    @Column (name = "Complemento")
     private Integer complemento;
     
-    @OneToOne(optional=true, fetch= FetchType.LAZY)
+    @OneToOne(optional=true, fetch = FetchType.LAZY)
     @ForeignKey(name="EnderecoPessoa")
     @JoinColumn(name = "IdPessoa", referencedColumnName = "IdPessoa")
     private Pessoa pessoa;
     
     @ManyToOne(optional = false, fetch = FetchType.LAZY)
-    @ForeignKey(name="EnderecoTipoLogradouro")
+    @ForeignKey(name = "EnderecoTipoLogradouro")
     @JoinColumn(name = "IdTipoLogradouro", referencedColumnName = "IdTipoLogradouro")
     private TipoLogradouro tipologradouro;
     
     @ManyToOne(optional=false, fetch = FetchType.LAZY)
-    @ForeignKey(name="EnderecoEstado")
+    @ForeignKey(name = "EnderecoEstado")
     @JoinColumn(name = "IdEstado", nullable = false)
     private Estado estado;
         
     @ManyToOne(optional=false, fetch = FetchType.LAZY)
-    @ForeignKey(name="EnderecoTipoEndereco")
+    @ForeignKey(name = "EnderecoTipoEndereco")
     @JoinColumn(name = "IdTipoEndereco", referencedColumnName="IdTipoEndereco")
     private TipoEndereco tipoendereco;
     
     @ManyToOne(optional=false, fetch = FetchType.LAZY)
-    @ForeignKey(name="EnderecoCidade")
+    @ForeignKey(name = "EnderecoCidade")
     @JoinColumn(name = "IdCidade", referencedColumnName="IdCidade")
     private Cidade cidade;  
     

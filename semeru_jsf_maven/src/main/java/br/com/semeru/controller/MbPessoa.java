@@ -7,14 +7,15 @@ import br.com.semeru.model.entities.Endereco;
 import br.com.semeru.model.entities.Pessoa;
 import br.com.semeru.util.FacesContextUtil;
 import java.io.Serializable;
+import java.util.Date;
 import java.util.List;
 import javax.faces.application.FacesMessage;
 import javax.faces.bean.ManagedBean;
-import javax.faces.bean.RequestScoped;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
 @ManagedBean(name="mbPessoa")
-@RequestScoped
+@SessionScoped
 public class MbPessoa implements Serializable{
     
     private static final long serialVersionUID = 1L;
@@ -51,7 +52,9 @@ public class MbPessoa implements Serializable{
      }
      
      public String addPessoa(){
+         Date date = new Date();
          if(pessoa.getIdPessoa() == null || pessoa.getIdPessoa() == 0){
+             pessoa.setDataDeCadastro(date);
              insertPessoa();
          }else{
              updatePessoa();
@@ -61,6 +64,8 @@ public class MbPessoa implements Serializable{
      
    private void insertPessoa() {
         pessoaDAO().save(pessoa);
+        endereco.setPessoa(pessoa);
+        enderecoDAO().save(endereco);
         FacesContext.getCurrentInstance().addMessage(null, 
                 new FacesMessage(FacesMessage.SEVERITY_INFO, 
                 "Gravação efetuada com sucesso", ""));
@@ -68,6 +73,7 @@ public class MbPessoa implements Serializable{
 
   private void updatePessoa() {
         pessoaDAO().update(pessoa);
+        enderecoDAO().update(endereco);
         FacesContext.getCurrentInstance().addMessage(null, 
                 new FacesMessage(FacesMessage.SEVERITY_INFO, 
                 "Atualização efetuada com sucesso", ""));
@@ -75,6 +81,7 @@ public class MbPessoa implements Serializable{
   
   public String deletePessoa(){
       pessoaDAO().remove(pessoa);
+      enderecoDAO().remove(endereco);
       FacesContext.getCurrentInstance().addMessage(null, 
                 new FacesMessage(FacesMessage.SEVERITY_INFO, 
                 "Registro excluído com sucesso", ""));

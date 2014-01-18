@@ -22,26 +22,26 @@ public class Pessoa implements Serializable{
     
     @Id
     @GeneratedValue
-    @Column(name="IdPessoa",nullable=false)
+    @Column(name = "IdPessoa", nullable = false)
     private Integer idPessoa;
     
-    @Column(name="Nome",nullable=false, length=60)
+    @Column(name = "Nome", nullable = false, length = 60)
     private String nome;
     
-    @Column(name="Email",nullable=false, length=80)
+    @Column(name = "Email", nullable = false, length = 80)
     private String email;
     
-    @Column(name="Telefone",nullable=false, length=15) //(011)-1111-1111
+    @Column(name = "Telefone",nullable = false, length = 15) //(011)-1111-1111
     private String telefone;
     
-    @Column(name="CPF",nullable=false, length=14)
+    @Column (name = "CPF", nullable = false, length = 14 )
     private String cpf;
     
-    @Column(name="DataDeNascimento",nullable=false)
+    @Column(name = "DataDeNascimento", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataDeNascimento;
     
-    @Column(name="DataDeCadastro",nullable=false)
+    @Column(name = "DataDeCadastro", nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataDeCadastro;
     
@@ -49,13 +49,13 @@ public class Pessoa implements Serializable{
     @ForeignKey(name="EnderecoPessoa")
     private Endereco endereco;
     
-    @ManyToOne(optional=false)
-    @ForeignKey(name="PessoaSexo")
-    @JoinColumn(name="IdSexo", referencedColumnName="IdSexo")
+    @ManyToOne(optional = false)
+    @ForeignKey(name = "PessoaSexo")
+    @JoinColumn(name = "IdSexo", referencedColumnName = "IdSexo")
     private Sexo sexo;
 
     public Pessoa() {
-        this.sexo = sexo;
+        this.sexo = new Sexo();
     }
 
     public Integer getIdPessoa() {
@@ -97,6 +97,8 @@ public class Pessoa implements Serializable{
     public void setCpf(String cpf) {
         this.cpf = cpf;
     }
+
+   
 
     public Date getDataDeNascimento() {
         return dataDeNascimento;

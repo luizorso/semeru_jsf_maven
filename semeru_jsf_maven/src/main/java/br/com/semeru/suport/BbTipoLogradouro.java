@@ -16,7 +16,7 @@ import org.hibernate.Session;
 public class BbTipoLogradouro implements Serializable{
     private static final long serialVersionUID = 1L;
     
-    public List<TipoLogradouro> getTipoLogradouro(){
+    public List<TipoLogradouro> getTipoLogradouros(){
         Session session = FacesContextUtil.getRequestSession();
         InterfaceDAO<TipoLogradouro> tipoLogradouroDAO =
                 new HibernateDAO<TipoLogradouro>(TipoLogradouro.class, session);
